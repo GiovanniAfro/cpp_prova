@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:04:39 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/27 15:42:10 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:25:50 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ class Sample
   
 public:
     
+    int foo;
+
     Sample(void);
     ~Sample(void);
+
+    void    bar(void);
 };
 
 class Macchina

@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:06:11 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/27 16:18:09 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:26:53 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ Sample::Sample(void)
 Sample::~Sample(void)
 {
     std::cout << "Destrcuctor called" << std::endl;
+    return;
+}
+
+void    Sample::bar(void)
+{
+    std::cout << "Member funtion bar called" << std::endl;
     return;
 }
 

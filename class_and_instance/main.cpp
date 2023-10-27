@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:09:10 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/27 15:47:03 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:30:52 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,15 @@ int main(void)
     Macchina mia;
     Sample joejoe;
 
+    joejoe.foo = 42;
+    std::cout << "joejoe.foo :" << joejoe.foo << std::endl;
     mia.marca = "Ferrari";
     mia.anno = 2022;
+    std::cout << "mia.marca :" << mia.marca << std::endl;
+    std::cout << "mia.anno :" << mia.anno << std::endl;
     mia.accelera();
+
+    joejoe.bar();
 
     return 0;
 }
