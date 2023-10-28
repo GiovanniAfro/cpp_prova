@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:06:11 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/27 16:26:53 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/28 13:21:52 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 
 Sample::Sample(void)
 {
+  
     std::cout << "Constructor called" << std::endl;
+    this->foo = 42;
+    std::cout << "this->foo: " << this->foo << std::endl;
+    
+    this->bar();
+
     return;
 }
 
