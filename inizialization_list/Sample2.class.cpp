@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:55:09 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/28 17:16:30 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:25:49 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Sample2::~Sample2(void)
     return;
 }
 
-/*Certamente! In C++, l'inizializzazione di una classe utilizzando una lista di inizializzazione (in inglese, 
+/*In C++, l'inizializzazione di una classe utilizzando una lista di inizializzazione (in inglese, 
 "initialization list") è una tecnica per inizializzare i membri di una classe nel costruttore della classe stessa.
  Questa tecnica è molto efficace e raccomandata quando si tratta di inizializzare i membri della classe, 
  in quanto offre prestazioni migliori rispetto all'inizializzazione all'interno del corpo del costruttore.
