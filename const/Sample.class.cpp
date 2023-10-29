@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 17:34:46 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/28 17:53:55 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:19:52 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    Sample::bar(void) const
     std::cout << "this->pi" << this->pi << std::endl;
     std::cout << "this->qd" << this->qd << std::endl;
 
-    //this->qd;
+    //this->qd = 3;
 
     return;
 }
