@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:46 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/10/29 16:33:06 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:04:17 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,16 @@ private:
 };
 
 #endif
+
+/*class MiaClasse {
+private:
+    int miaVariabilePrivata;
+public:
+    void ImpostaVariabile(int valore) {
+        miaVariabilePrivata = valore; // Questo è consentito perché è all'interno della stessa classe.
+    }
+    int OttieniVariabile() {
+        return miaVariabilePrivata; // Anche questo è consentito, poiché è all'interno della stessa classe.
+    }
+};
+*/
