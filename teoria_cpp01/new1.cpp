@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:00:52 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/15 12:03:45 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/16 20:20:39 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,6 @@ int main()
 
 //  `bob` viene allocato sullo stack perché è una variabile locale in `main()` e la sua durata è limitata allo scope di `main()`. 
 //  `jim`, d'altro canto, viene allocato sull'heap utilizzando `new` perché potrebbe essere necessario che la sua vita persista oltre la fine di `main()`
-//   e la sua dimensione potrebbe non essere nota a tempo di compilazione.
+//   e la sua dimensione potrebbe non essere nota a tempo di compilazione. 
+
+//lascia una stellina :D
