@@ -6,12 +6,12 @@
 /*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:04:59 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/12/02 15:07:40 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/12/02 15:21:43 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE_CLASS_HPP
-# define SAMPLE_CLASS_HPP
+#ifndef SAMPLE_CLASS_H
+# define SAMPLE_CLASS_H
 
 #include <iostream>
 
