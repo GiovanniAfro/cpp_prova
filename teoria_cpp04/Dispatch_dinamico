@@ -1,0 +1,29 @@
+Il concetto di "dispatch dinamico" è associato all'uso di funzioni virtuali in C++ e si riferisce alla capacità del programma di determinare dinamicamente quale implementazione di una funzione virtuale chiamare durante l'esecuzione del programma.
+
+Quando una funzione virtuale è dichiarata nella classe di base e viene sovrascritta nelle classi derivate, il compilatore non può conoscere in anticipo quale versione della funzione dovrà essere chiamata, poiché dipenderà dal tipo effettivo dell'oggetto a tempo di esecuzione.
+
+Il dispatch dinamico è il meccanismo che consente al programma di risolvere questa ambiguità a tempo di esecuzione. Quando si chiama una funzione virtuale attraverso un puntatore o un riferimento alla classe di base, il sistema esegue una ricerca dinamica per individuare la versione appropriata della funzione nella gerarchia delle classi.
+
+Ecco come funziona:
+
+1. **Creazione dell'oggetto:**
+   - Si crea un oggetto della classe derivata (ad esempio, `Warrior`).
+   - Si assegna il puntatore o il riferimento di tipo classe di base (`Character*`) all'oggetto creato.
+
+2. **Chiamata di una funzione virtuale:**
+   - Viene chiamata una funzione virtuale sulla classe di base attraverso il puntatore o il riferimento.
+   - A tempo di esecuzione, il sistema esamina il tipo effettivo dell'oggetto a cui il puntatore o il riferimento fa riferimento.
+
+3. **Risoluzione dinamica:**
+   - In base al tipo effettivo dell'oggetto, il sistema determina quale versione della funzione virtuale deve essere chiamata.
+   - La chiamata di funzione viene instradata dinamicamente alla versione corretta nella gerarchia delle classi.
+
+Esempio:
+```cpp
+Character* b = new Warrior();  // Puntatore alla classe di base che punta a un oggetto di classe derivata
+b->direCiao("studenti");  // Chiamata di funzione virtuale attraverso il puntatore
+
+// A tempo di esecuzione, il sistema determina che l'oggetto è di tipo Warrior e chiama Warrior::direCiao.
+```
+
+In questo modo, il dispatch dinamico consente di ottenere polimorfismo, in cui il comportamento delle funzioni può variare in base al tipo reale dell'oggetto a cui si sta facendo riferimento. Questo è un aspetto cruciale dell'ereditarietà e delle funzioni virtuali in C++, poiché consente una maggiore flessibilità e estensibilità del codice.
