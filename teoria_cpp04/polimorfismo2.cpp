@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 16:13:53 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/12/12 12:35:53 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/12/13 01:13:45 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int	main()
 // il metodo chiamato è quello definito nella classe di base.
 // Anche se l'oggetto è effettivamente un Warrior, chiamare b->direCiao("studenti"); 
 // richiamerà Character::direCiao, non Warrior::direCiao.
-// Con la Parola Chiave virtual (Secondo Codice):
 
+// Con la Parola Chiave virtual (Secondo Codice):
 // Aggiungendo la parola chiave virtual al metodo nella classe di base, stai dicendo al compilatore che questo metodo è destinato a essere sovrascritto dalle classi derivate. Ciò abilita il dispatch dinamico durante l'esecuzione.
 // Ora, quando si utilizza un puntatore o un riferimento della classe di base per fare riferimento a un oggetto di una classe derivata, verrà chiamato il metodo corretto della classe derivata. Quindi, b->direCiao("studenti"); 
 // chiamerà correttamente Warrior::direCiao grazie al meccanismo virtuale.
