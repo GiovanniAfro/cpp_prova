@@ -1,0 +1,104 @@
+Il polimorfismo è un concetto chiave nella programmazione orientata agli oggetti (OOP) ed è basato sulla capacità di un oggetto di assumere molte forme. In termini più semplici, il polimorfismo consente di trattare oggetti di classi diverse attraverso una stessa interfaccia comune, permettendo loro di rispondere in modi diversi a chiamate di metodi comuni. Ci sono due tipi principali di polimorfismo in C++: polimorfismo compile-time (o statico) e polimorfismo runtime (o dinamico).
+
+### 1. Polimorfismo Compile-Time (Statico):
+
+#### a. **Sovraccarico di Funzioni:**
+   - Il sovraccarico di funzioni è una forma di polimorfismo statico in cui più funzioni con lo stesso nome vengono dichiarate nella stessa portata. La scelta della funzione da chiamare avviene durante la compilazione in base ai tipi degli argomenti.
+
+```cpp
+void print(int value) {
+    std::cout << "Integer: " << value << std::endl;
+}
+
+void print(double value) {
+    std::cout << "Double: " << value << std::endl;
+}
+```
+
+#### b. **Template:**
+   - I template C++ forniscono un altro esempio di polimorfismo statico, in cui le classi e le funzioni possono essere parametrizzate da tipi.
+
+```cpp
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+```
+
+### 2. Polimorfismo Runtime (Dinamico):
+
+#### a. **Polimorfismo di Sottotipo:**
+   - Questo tipo di polimorfismo è associato alle gerarchie di classi e alle funzioni virtuali. Viene utilizzato quando si lavora con puntatori o riferimenti a oggetti di classi base che possono essere sostituiti da oggetti di classi derivate.
+
+```cpp
+class Shape {
+public:
+    virtual void draw() const {
+        std::cout << "Drawing a shape" << std::endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void draw() const override {
+        std::cout << "Drawing a circle" << std::endl;
+    }
+};
+
+class Square : public Shape {
+public:
+    void draw() const override {
+        std::cout << "Drawing a square" << std::endl;
+    }
+};
+
+int main() {
+    Shape* shape1 = new Circle();
+    Shape* shape2 = new Square();
+
+    shape1->draw();  // Chiama draw() di Circle
+    shape2->draw();  // Chiama draw() di Square
+}
+```
+
+#### b. **Polimorfismo con Funzioni Virtuali Pure:**
+   - Quando una classe contiene funzioni virtuali pure (funzioni virtuali dichiarate con `= 0`), diventa astratta e non può essere istanziata direttamente. Le classi derivate devono implementare queste funzioni, consentendo il polimorfismo.
+
+```cpp
+class Animal {
+public:
+    virtual void makeSound() const = 0;
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() const override {
+        std::cout << "Woof!" << std::endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() const override {
+        std::cout << "Meow!" << std::endl;
+    }
+};
+
+int main() {
+    Animal* dog = new Dog();
+    Animal* cat = new Cat();
+
+    dog->makeSound();  // Chiama makeSound() di Dog
+    cat->makeSound();  // Chiama makeSound() di Cat
+}
+```
+
+### Vantaggi del Polimorfismo:
+
+- **Flessibilità:** Consente di scrivere codice più flessibile, in cui oggetti di classi diverse possono essere trattati in modo uniforme attraverso interfacce comuni.
+  
+- **Estensibilità:** Aggiungere nuove classi derivate non richiede modifiche alle parti esistenti del codice.
+
+- **Manutenibilità:** Facilita la manutenzione del codice, in quanto le modifiche a una classe non richiedono la modifica di tutto il codice che la utilizza.
+
+Il polimorfismo è uno dei concetti chiave che contribuiscono alla potenza e alla flessibilità della programmazione orientata agli oggetti.
