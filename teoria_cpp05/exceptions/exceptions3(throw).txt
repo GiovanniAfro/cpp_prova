@@ -1,0 +1,48 @@
+La parola chiave `throw` in C++ è utilizzata per lanciare (o "generare") un'eccezione in un punto specifico del codice. 
+Quando si verifica una condizione eccezionale o un errore, puoi utilizzare `throw` per segnalare che qualcosa di inatteso è accaduto. 
+Questo meccanismo consente di interrompere il flusso normale del programma e cercare un blocco `catch` corrispondente che possa gestire l'eccezione.
+
+Ecco come funziona:
+
+1. **Lancio dell'eccezione:**
+   - Quando utilizzi `throw`, stai basicamente indicando al programma che si è verificato un problema che richiede attenzione. 
+   Puoi lanciare qualsiasi tipo di oggetto, ma è comune utilizzare oggetti di classi derivate da `std::exception` o dalle sue sottoclassi per rappresentare informazioni sull'errore.
+
+   ```cpp
+   throw MyException(); // Lancia un'eccezione di tipo MyException
+   ```
+
+2. **Ricerca del blocco `catch`:**
+   - Dopo aver lanciato un'eccezione, il controllo passa al blocco `catch` più vicino che può gestire quel tipo di eccezione.
+   - I blocchi `catch` sono dichiarati all'interno di un blocco `try`. 
+   Quando viene sollevata un'eccezione all'interno di un blocco `try`, il controllo passa ai blocchi `catch` corrispondenti.
+
+   ```cpp
+   try
+   {
+       // ... codice che potrebbe sollevare un'eccezione
+       throw MyException(); // Lancia un'eccezione di tipo MyException
+   }
+   catch (const MyException& e)
+   {
+       // Questo blocco viene eseguito quando viene catturata un'eccezione di tipo MyException
+       // Puoi gestire l'errore qui
+   }
+   ```
+
+3. **Gestione dell'eccezione:**
+   - Una volta trovato il blocco `catch` corrispondente, il codice all'interno di quel blocco viene eseguito. 
+   Puoi accedere all'oggetto eccezione catturato per ottenere informazioni sull'errore.
+
+   ```cpp
+   catch (const MyException& e)
+   {
+       // Puoi accedere alle informazioni sull'errore attraverso l'oggetto eccezione 'e'
+       std::cout << "Errore: " << e.what() << std::endl;
+   }
+   ```
+
+La funzione `what()` che abbiamo discusso in precedenza è spesso utilizzata per ottenere una descrizione testuale dell'errore associato all'oggetto eccezione catturato.
+
+In breve, `throw` segnala che si è verificato un errore o una condizione eccezionale, mentre la gestione effettiva dell'errore avviene nei blocchi `catch` associati. 
+Il lancio di un'eccezione consente di separare la logica di gestione degli errori dal flusso di controllo normale del programma, rendendo il codice più robusto e manutenibile.

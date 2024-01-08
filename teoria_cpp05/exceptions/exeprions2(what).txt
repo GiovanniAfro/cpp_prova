@@ -1,0 +1,73 @@
+"what" e "throw" sono due concetti chiave quando si lavora con eccezioni in C++.
+
+### La Funzione `what()`
+
+La funzione `what()` è un metodo virtuale definito nella classe base `std::exception` e viene utilizzato per ottenere una descrizione testuale dell'errore associato all'eccezione. 
+Quando crei una classe personalizzata derivata da `std::exception`, 
+puoi sovrascrivere questa funzione per restituire una stringa che descrive l'errore specifico catturato dall'eccezione.
+
+Ecco come è definita nella classe `std::exception`:
+
+```cpp
+virtual const char* what() const throw();
+```
+
+- `virtual`: Indica che questa funzione può essere sovrascritta nelle classi derivate.
+- `const char*`: Il tipo restituito è un puntatore a una stringa di caratteri (un array di caratteri) che rappresenta la descrizione dell'errore.
+- `const throw()`: Specifica che questa funzione non solleverà eccezioni.
+
+Esempio con una classe derivata:
+
+```cpp
+class CustomException : public std::exception
+{
+public:
+    virtual const char* what() const throw()
+    {
+        return "Errore personalizzato!";
+    }
+};
+```
+
+### La Parola Chiave `throw`
+
+La parola chiave `throw` viene utilizzata per lanciare un'eccezione in un certo punto del codice. 
+Quando si verifica una situazione eccezionale o di errore, puoi utilizzare `throw` per "lanciare" un oggetto eccezione. 
+Questo interrompe il flusso normale del programma e cerca il blocco `catch` più vicino capace di gestire quell'eccezione.
+
+Esempio:
+
+```cpp
+void myFunction()
+{
+    // Se si verifica un errore, lancia un'eccezione
+    if (errore)
+    {
+        throw CustomException(); // Lancia un'istanza della tua classe di eccezione personalizzata
+    }
+}
+```
+
+### Collegamento tra `what()` e `throw`
+
+Quando lanci un'eccezione, puoi catturarla successivamente in un blocco `catch`. 
+La funzione `what()` viene poi spesso utilizzata per ottenere una descrizione dell'errore associato all'eccezione catturata.
+
+Esempio di utilizzo:
+
+```cpp
+try
+{
+    myFunction();
+}
+catch (const CustomException& e)
+{
+    std::cout << "Eccezione catturata: " << e.what() << std::endl;
+}
+```
+
+In questo esempio, se `myFunction()` lancia un'eccezione di tipo `CustomException`, il blocco `catch` corrispondente verrà eseguito, e la funzione `what()` 
+sarà chiamata per ottenere la descrizione dell'errore associato all'istanza dell'eccezione.
+
+In sintesi, `what()` è un metodo che restituisce una descrizione dell'errore associato a un'eccezione, 
+mentre `throw` è utilizzato per lanciare un'eccezione in un punto specifico del codice. Utilizzati insieme, forniscono un meccanismo potente per la gestione degli errori in C++.
