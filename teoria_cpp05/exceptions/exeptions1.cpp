@@ -124,4 +124,4 @@ void test4()
 
 In sintesi, le eccezioni in C++ forniscono un modo strutturato per gestire situazioni anomale,
 migliorando la manutenibilità del codice e la sua capacità di gestire errori in modo elegante.
-Tuttavia, è importante utilizzare le eccezioni con attenzione e in modo appropriato per evitare impatti negativi sulle prestazioni e mantenere un codice pulito e comprensibile. */
+Tuttavia, è importante utilizzare le eccezioni con attenzione e in modo appropriato per evitare impatti negativi sulle prestazioni e mantenere un codice pulito e comprensibile.  */
