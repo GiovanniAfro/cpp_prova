@@ -1,0 +1,36 @@
+La "qualifica di constness" si riferisce alla caratteristica di un oggetto in C++ che indica se l'oggetto è considerato "constante" o "non costante". In altre parole, stabilisce se è consentito modificare il valore dell'oggetto dopo la sua inizializzazione.
+
+In C++, la qualifica di constness può essere applicata a variabili, puntatori, riferimenti e funzioni. L'utilizzo della parola chiave `const` è il mezzo principale per applicare questa qualifica.
+
+Ecco alcuni esempi:
+
+1. **Variabili Costanti:**
+   ```cpp
+   const int x = 10;  // x è una variabile costante
+   ```
+
+2. **Puntatori Costanti:**
+   ```cpp
+   int y = 20;
+   const int *ptr = &y;  // ptr è un puntatore costante, il valore puntato non può essere modificato
+   ```
+
+3. **Riferimenti Costanti:**
+   ```cpp
+   int z = 30;
+   const int &ref = z;  // ref è un riferimento costante, non può essere usato per modificare il valore di z
+   ```
+
+4. **Funzioni Costanti:**
+   ```cpp
+   class MyClass {
+   public:
+       void NonCostante() { /* ... */ }               // Funzione non costante
+       void Costante() const { /* ... */ }            // Funzione costante
+       int RestituisceValoreCostante() const { /* ... */ return 42; }  // Funzione costante che restituisce un valore costante
+   };
+   ```
+
+L'utilizzo della qualifica di constness fornisce al programmatore e al compilatore informazioni sulla natura dell'oggetto e vincola ciò che è consentito o meno nei contesti in cui viene utilizzato. Ad esempio, le variabili costanti non possono essere modificate dopo la loro inizializzazione, i puntatori o i riferimenti costanti non possono essere utilizzati per modificare i dati a cui puntano o a cui fanno riferimento, e le funzioni costanti non possono modificare gli attributi dell'oggetto su cui sono chiamate.
+
+L'applicazione di constness contribuisce alla sicurezza del codice e può aiutare a prevenire errori causati dalla modifica accidentale di dati che dovrebbero rimanere immutabili in determinati contesti.
