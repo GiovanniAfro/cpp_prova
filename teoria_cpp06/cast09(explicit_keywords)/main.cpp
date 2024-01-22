@@ -85,4 +85,5 @@ int main(void)
 // - Se si vuole consentire le conversioni implicite di tipo, è possibile omettere `explicit`.
 // - L'utilizzo di `explicit` può richiedere conversioni esplicite di tipo nel codice, rendendo il codice più verboso in alcuni casi, ma apportando vantaggi in chiarezza e sicurezza.
 
+
 // In conclusione, `explicit` è uno strumento utile per migliorare la chiarezza e prevenire conversioni indesiderate nel codice. La sua adozione dipende dalle esigenze specifiche del progetto e dalla progettazione della classe.
