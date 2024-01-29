@@ -1,0 +1,69 @@
+Nel codice, il concetto di `default_type` nei template in C++ è implementato attraverso l'uso di un valore di default per il parametro di tipo `T` nella definizione della classe template `Vertex`.
+
+Ecco un'analisi più dettagliata:
+
+```cpp
+#include <iostream>
+#include <iomanip>
+
+// Definizione della classe template Vertex con un valore di default per il parametro di tipo T
+template<typename T = float>
+class Vertex {
+public:
+    // Costruttore con tre parametri di tipo T (x, y, z)
+    Vertex(T const &x, T const &y, T const &z) : _x(x), _y(y), _z(z) {}
+
+    // Distruttore
+    ~Vertex(void) {}
+
+    // Metodi getter per ottenere i valori x, y, e z
+    T const &getX(void) const { return this->_x; }
+    T const &getY(void) const { return this->_y; }
+    T const &getZ(void) const { return this->_z; }
+
+private:
+    T const _x;
+    T const _y;
+    T const _z;
+
+    // Costruttore privato senza argomenti per evitare l'istanziazione senza specificare un tipo
+    Vertex(void);
+};
+
+// Funzione friend per l'operatore di output <<, che può essere utilizzata con qualsiasi tipo T
+template<typename T>
+std::ostream &operator<<(std::ostream &o, Vertex<T> const &v) {
+    std::cout.precision(1);
+    o << std::setiosflags(std::ios::fixed);
+    o << "vertex( ";
+    o << v.getX() << ", ";
+    o << v.getY() << ", ";
+    o << v.getZ() << " )";
+    return o;
+}
+```
+
+### Default Type (`typename T = float`):
+
+Nella dichiarazione della classe template `Vertex`, `typename T = float` specifica che `T` è il parametro di tipo della classe, e il valore di default è `float`. Questo significa che, se non viene specificato alcun tipo quando si utilizza la classe, il compilatore utilizzerà automaticamente il tipo `float`.
+
+### Utilizzo nel `main`:
+
+```cpp
+#include <iostream>
+#include "vertex.class.cpp"
+
+int main(void) {
+    // Creazione di istanze della classe Vertex con tipi diversi
+    Vertex<int> v1(12, 23, 54);  // Istanza di Vertex con tipo int
+    Vertex<> v2(12, 23, 54);     // Istanza di Vertex senza specificare un tipo (usa il default float)
+
+    // Stampa delle istanze utilizzando l'operatore di output <<
+    std::cout << v1 << std::endl;  // Stampa vertex(12, 23, 54)
+    std::cout << v2 << std::endl;  // Stampa vertex(12.0, 23.0, 54.0)
+
+    return 0;
+}
+```
+
+Nel blocco `main`, viene mostrato come puoi creare un'istanza di `Vertex` specificando un tipo (`Vertex<int>`) o senza specificare alcun tipo (`Vertex<>`). Nel secondo caso, il compilatore utilizza il tipo di default `float` specificato nella dichiarazione della classe template. Questo fornisce flessibilità nella creazione delle istanze senza la necessità di specificare il tipo ogni volta.
